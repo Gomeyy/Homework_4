@@ -1,0 +1,89 @@
+//import java.applet.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Menu extends JFrame
+{
+    // constructor
+    public Menu()
+    {
+        JFrame menu=new JFrame();
+        menu.setSize(760, 530);
+        menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        menu.setVisible(true);
+        menu.setResizable(false);
+        
+        // creating components & setting positions
+        JPanel menuButtons=new JPanel();
+        menuButtons.setLayout(null);
+        
+        JLabel bg=new JLabel("SNAKE"); // maybe changing later to icon
+        bg.setBounds(180, 60, 490, 100);
+        
+        JButton play=new JButton("Play");
+        play.setBounds(242, 230, 280, 45);
+        
+        JButton instructions=new JButton("Instructions");
+        instructions.setBounds(242, 280, 280, 45);
+        
+        JButton settings=new JButton("Settings");
+        settings.setBounds(242, 330, 280, 45);
+        
+        JButton highScores=new JButton("High Scores");
+        highScores.setBounds(242, 380, 280, 45);
+        
+        // adding to JFrame
+        menu.add(menuButtons);
+        menuButtons.add(bg);
+        menuButtons.add(play);
+        menuButtons.add(instructions);
+        menuButtons.add(settings);
+        menuButtons.add(highScores);
+        
+        // editing colors and fonts
+        menuButtons.setBackground(Color.BLACK);
+        bg.setFont(new Font("Serif", Font.PLAIN, 120));
+        bg.setForeground(Color.WHITE);
+        play.setBackground(Color.WHITE);
+        play.setForeground(Color.BLUE);
+        play.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+        instructions.setBackground(Color.WHITE);
+        instructions.setForeground(Color.BLUE);
+        instructions.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+        settings.setBackground(Color.WHITE);
+        settings.setForeground(Color.BLUE);
+        settings.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+        highScores.setBackground(Color.WHITE);
+        highScores.setForeground(Color.BLUE);
+        highScores.setFont(new Font("Sans Serif", Font.PLAIN, 30));
+
+        // button actions
+        play.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                menu.dispose();
+                Grid game = new Grid(51, 51, 10, 3);
+                game.setVisible(true);
+            }
+        });
+        instructions.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+        settings.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+        highScores.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                //
+            }
+        });
+    }
+    public static void main(String[] args)
+    {
+        Menu m=new Menu();
+    }
+}
