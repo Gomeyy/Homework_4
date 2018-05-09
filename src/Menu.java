@@ -13,6 +13,7 @@ public class Menu extends JPanel {
             };
     shapeItem[][] snakeLogo;
     int offsetY, offsetX, size, col = 0, ind = 0;
+    Color logoColor = Color.WHITE, background = Color.BLACK;
     // constructor
     public Menu(int w, int h) {
         this.size = w / 35;
@@ -27,7 +28,7 @@ public class Menu extends JPanel {
                         (r * this.size) + this.offsetX,
                         y + this.offsetY,
                         this.size - 2,
-                        this.size - 2));
+                        this.size - 2), this.logoColor);
             }
         }
         //creating components & setting positions
@@ -48,7 +49,7 @@ public class Menu extends JPanel {
         newButton(highScores, 150);
 
         // editing colors and fonts
-        this.setBackground(Color.BLACK);
+        this.setBackground(this.background);
 
     }
     protected void paintComponent(Graphics g) {
@@ -84,5 +85,15 @@ public class Menu extends JPanel {
         b.setForeground(Color.BLUE);
         b.setFont(new Font("Sans Serif", Font.PLAIN, 30));
         this.add(b);
+    }
+
+    public void updateColor() {
+        this.setBackground(this.background);
+        for(shapeItem[] cols: snakeLogo) {
+            for(shapeItem logo: cols) {
+                logo.setColor(this.logoColor);
+            }
+        }
+        this.revalidate(); this.repaint();
     }
 }

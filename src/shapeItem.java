@@ -5,12 +5,14 @@ public class shapeItem {
     private Shape shape;
     private Color color;
     private Color startColor;
+    boolean noRoom;
     int startY;
     int vel;
 
     shapeItem(Shape shape, Color color) {
         this.shape = shape;
         this.color = this.startColor = color;
+        this.startY = (int) this.shape.getBounds().getY();
     }
 
     shapeItem(Shape shape){
@@ -48,6 +50,10 @@ public class shapeItem {
     public void setColor() {
         this.color = this.startColor;
     }
+
+    public void setStartColor(Color c) {this.startColor = c; }
+
+    public void setNoRoom() {this.noRoom = true;}
 
     public void setOpacity(int diff) {
         this.color = new Color(this.startColor.getRed(),
