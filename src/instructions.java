@@ -41,11 +41,11 @@ public class instructions extends JPanel {
         movement.setBounds(w/17, yPos+80, 700, 200);
         this.add(movement);
 
-        JLabel pause=new JLabel("Press Esc to pause.");
+        JLabel pause=new JLabel("Press Esc to pause and unpause.");
         pause.setIcon(new ImageIcon(getClass().getResource("resources/esc.png")));
         pause.setFont(new Font("Serif", Font.BOLD, 20));
         pause.setForeground(Color.WHITE);
-        pause.setBounds(w/3-20, yPos+160, 400, 170);
+        pause.setBounds(w/3-85, yPos+160, 400, 170);
         this.add(pause);
 
         int test = (w - (225 * 2)) / 3;
