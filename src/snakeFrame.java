@@ -1,3 +1,12 @@
+/********************************
+ * Matthew Gomes & Lydia Yu
+ * Homework 4
+ * CSCI 185 Programming II M07
+ * Spring 2018
+ * Professor Wenjia Li
+ * 5/10/18
+ ********************************/
+
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
