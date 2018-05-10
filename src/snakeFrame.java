@@ -18,7 +18,7 @@ class snakeFrame extends JFrame {
     boolean p = true, fromGame = false;
     int startLength;
 
-    Timer update, vel, rainbow;
+    Timer update, vel, rainbow, countDown;
     String countDownNum = "3";
     int countDownFont = 0, countDownIteration = 0;
     Clip clip;
@@ -83,7 +83,7 @@ class snakeFrame extends JFrame {
             this.game.countdown(this.countDownNum, this.countDownFont);
             this.countDownFont++;
         });
-        Timer countDown = new Timer(1000, null);
+        countDown = new Timer(1000, null);
         countDown.addActionListener(e -> {
             if(this.countDownIteration <= 1) {
                 this.countDownNum = this.countDownIteration == 0 ? "2" : "1";
@@ -488,7 +488,7 @@ class snakeFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
 
             //Stops the changing of the velocity when paused
-            if (!p) {
+            if (!p && !countDown.isRunning()) {
 
                 //Checks if player is trying to flip snake around
                 if (Math.abs(xVel - this.tempX) != 2 && Math.abs(yVel - this.tempY) != 2) {

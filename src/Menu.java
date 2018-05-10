@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Menu extends JPanel {
     JButton play, instructions, settings, highScores;
-    int buttonWidth = 280, buttonHeight = 45, xPos, yPos;
+    int buttonWidth = 280, buttonHeight = 55, xPos, yPos;
     int [][] snakeLogoCords = {
             {1, 2, 3, 6}, {0, 3, 6}, {0, 3, 6}, {0, 3, 6}, {0, 4, 5}, {}, //S
             {0, 1, 2, 3, 4, 5, 6}, {2}, {3}, {4}, {0, 1, 2, 3, 4, 5, 6}, {}, //N
@@ -40,13 +40,14 @@ public class Menu extends JPanel {
         newButton(play, 0);
 
         instructions = new JButton("Instructions");
-        newButton(instructions, 50);
+        newButton(instructions, 75);
 
         settings = new JButton("Settings");
-        newButton(settings, 100);
+        newButton(settings, 150);
 
         highScores = new JButton("High Scores");
-        newButton(highScores, 150);
+        //newButton(highScores, 150);
+        //highScores.setEnabled(false);
 
         // editing colors and fonts
         this.setBackground(this.background);
@@ -79,9 +80,9 @@ public class Menu extends JPanel {
         col++;
     }
 
-    public void newButton(Component b, int offset){
+    public void newButton(JButton b, int offset){
         b.setBounds(xPos, yPos + offset, buttonWidth, buttonHeight);
-        b.setBackground(Color.WHITE);
+        b.setBackground(Color.white);
         b.setForeground(Color.BLUE);
         b.setFont(new Font("Sans Serif", Font.PLAIN, 30));
         this.add(b);

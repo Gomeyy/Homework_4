@@ -21,7 +21,7 @@ public class settings extends JPanel {
         speed.setPaintTicks(true); speed.setPaintLabels(true);
         speed.setMajorTickSpacing(20); speed.setMinorTickSpacing(5);
         speed.setForeground(Color.white);
-        snakeSpeed = new setting("Snake Speed", speed, 0);
+        snakeSpeed = new setting("Snake Speed Increase", speed, 0);
         snakeSpeed.addTo(this);
 
         JComboBox<colorObject> head = new JComboBox<>(colors);
