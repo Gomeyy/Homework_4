@@ -46,8 +46,8 @@ public class Menu extends JPanel {
         newButton(settings, 150);
 
         highScores = new JButton("High Scores");
-        //newButton(highScores, 150);
-        //highScores.setEnabled(false);
+//        newButton(highScores, 150);
+//        highScores.setEnabled(false);
 
         // editing colors and fonts
         this.setBackground(this.background);
